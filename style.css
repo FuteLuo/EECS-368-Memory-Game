@@ -1,0 +1,27 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+    width: 400px;
+    margin: auto;
+    border: 1px solid;
+
+}
+
+h2 {
+    margin-left: 750px;
+    color:#F4ECE6;
+}
+
+h1 {
+   margin-left: 750px;
+   color: #F4ECE6;
+}
+
+.score {
+    color:#F4ECE6;
+}
+
+.background{
+    background-image: url("image/background.jpg");
+}
