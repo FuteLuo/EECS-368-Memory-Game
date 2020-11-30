@@ -80,13 +80,25 @@ document.addEventListener('DOMContentLoaded', () => {
  const grid = document.querySelector('.grid');
  const result = document.querySelector('#score');
  const won = document.querySelector('.CheckWon');
+ const play = document.querySelector('.playgame');
+ const menu = document.getElementById('Menustatus');
+
+ play.style.display = 'none';
  won.style.display = 'none';
 
  var chosen = [];
  var chosenID = [];
  var Won = [];
-
- //create board
+ //Help Menu
+ document.querySelector('#Help').addEventListener('click', function() {
+    alert('The player chooses a card and carefully turns it over. Be sure not to bother the surrounding cards. The player then selects another card and turns it over. If the two cards are a matching pair for example two Red then both card been fliped and Choose another card');
+})
+ //Start the Game
+ document.querySelector('#StartGame').addEventListener('click', function(){
+    play.style.display ='block';
+    menu.style.display ='none'; 
+    
+    //create board
     function board() {
         for(let i = 0; i< cArray.length; i++){
             var card = document.createElement('img');
@@ -143,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
  //showing the board;
  board();
+ })
 
 
 
