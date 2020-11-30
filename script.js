@@ -117,8 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (chosen [0] === chosen[1])
         {
             alert('You got it!');
-            cards[optOne].setAttribute('src', 'image/black.png');
-            cards[optTwo].setAttribute('src', 'image/black.png');
+            cards[optOne].setAttribute('src', 'image/Black.png');
+            cards[optTwo].setAttribute('src', 'image/Black.png');
             Won.push(chosen);
         }
         else
