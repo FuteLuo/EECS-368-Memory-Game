@@ -4,7 +4,5 @@
  -Next step: getting difficulty chosen.
              
              Set the time alert.
-             
-             UI style advancing.
 
 Live Demo: https://futeluo.github.io/EECS-368-Memory-Game/
