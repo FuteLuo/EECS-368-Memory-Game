@@ -1,3 +1,9 @@
+/* File name: sript.js
+   editor: Fute Luo
+   EECS 368 Project
+   Date: 11/30/2020
+*/
+
 document.addEventListener('DOMContentLoaded', () => {
     const cArray = [
         //card image relative
@@ -75,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ]
 
+ //Global Resaurce
  cArray.sort(() => 0.5 - Math.random());
 
  const grid = document.querySelector('.grid');
@@ -94,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
  var chosen = [];
  var chosenID = [];
  var Won = [];
+
  //Help Menu
  document.querySelector('#Help').addEventListener('click', function() {
     alert('The player chooses a card, then selects another card and turns it over. If the two cards are a matching pair for example two Red then both card been fliped and Choose another card. If you filp all cards correctly, you win. If times out, you lose');
@@ -114,6 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
             grid.appendChild(card);
         }
     }
+
     //Start the timer, check lose if times out
     function countDown()
     {
@@ -129,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             timeLeft -=1
         }, 1000)
     }
+
     //check it is match or not
     function check() {
         var cards = document.querySelectorAll('img');
@@ -174,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
- //showing the board;
+ //showing the board and Timer
  board();
  countDown();
  })
