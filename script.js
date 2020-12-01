@@ -79,20 +79,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
  const grid = document.querySelector('.grid');
  const result = document.querySelector('#score');
- const won = document.querySelector('.CheckWon');
+ const WL = document.querySelector('.CheckWonLose');
+ const timeleftDisplay = document.querySelector('#time-left');
+
+ timeLeft = 60;
+
  const play = document.querySelector('.playgame');
  const menu = document.getElementById('Menustatus');
+ const time = document.getElementById('Time');
 
  play.style.display = 'none';
- won.style.display = 'none';
+ WL.style.display = 'none';
 
  var chosen = [];
  var chosenID = [];
  var Won = [];
  //Help Menu
  document.querySelector('#Help').addEventListener('click', function() {
-    alert('The player chooses a card and carefully turns it over. Be sure not to bother the surrounding cards. The player then selects another card and turns it over. If the two cards are a matching pair for example two Red then both card been fliped and Choose another card');
+    alert('The player chooses a card, then selects another card and turns it over. If the two cards are a matching pair for example two Red then both card been fliped and Choose another card. If you filp all cards correctly, you win. If times out, you lose');
 })
+
  //Start the Game
  document.querySelector('#StartGame').addEventListener('click', function(){
     play.style.display ='block';
@@ -108,7 +114,22 @@ document.addEventListener('DOMContentLoaded', () => {
             grid.appendChild(card);
         }
     }
-
+    //Start the timer, check lose if times out
+    function countDown()
+    {
+        setInterval(function(){
+            if(timeLeft <= 0) {
+                clearInterval(timeLeft = 0);
+                alert("You Lose! Page will refresh after 5s when you click 'Confirm'");
+                setTimeout(function () {
+                    location.reload();
+                }, 5000);
+            }
+            alert("You Lose! Page will refresh after 5s when you click 'Confirm'");
+            timeleftDisplay.innerHTML = timeLeft;
+            timeLeft -=1
+        }, 1000)
+    }
     //check it is match or not
     function check() {
         var cards = document.querySelectorAll('img');
@@ -134,7 +155,8 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             alert('Congratulations! You got all of the cards!');
             result.textContent = 'Won!';
-            won.style.display = "block"
+            WL.style.display = "block";
+            time.style.display = "none";
         }
     }
 
@@ -155,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
  //showing the board;
  board();
+ countDown();
  })
 
 
