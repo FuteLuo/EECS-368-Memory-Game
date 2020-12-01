@@ -125,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     location.reload();
                 }, 5000);
             }
-            alert("You Lose! Page will refresh after 5s when you click 'Confirm'");
             timeleftDisplay.innerHTML = timeLeft;
             timeLeft -=1
         }, 1000)
