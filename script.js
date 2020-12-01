@@ -129,10 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(function(){
             if(timeLeft <= 0) {
                 clearInterval(timeLeft = 0);
-                alert("You Lose! Page will refresh after 5s when you click 'Confirm'");
-                setTimeout(function () {
-                    location.reload();
-                }, 5000);
+                alert("You Lose! Page will refresh after you click 'Confirm'");
+                window.setTimeout(function () {
+                    window.location.reload();
+                }, 0.001);
             }
             timeleftDisplay.innerHTML = timeLeft;
             timeLeft -=1
